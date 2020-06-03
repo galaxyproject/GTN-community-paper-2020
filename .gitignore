@@ -4,3 +4,7 @@
 *.dvi
 *.log
 *.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
