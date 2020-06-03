@@ -98,7 +98,8 @@
 
 % ligatures disabled
 \usepackage{microtype}
-\DisableLigatures[f]{encoding = *, family = * }
+% Helena: I have disabled because doesn't work on older latex installs and it is ugly without ligatures!
+%\DisableLigatures[f]{encoding=*,family=*}
 
 % color can be used to apply background shading to table cells only
 \usepackage[table]{xcolor}
@@ -237,7 +238,7 @@ In order to support this growing community of instructors, we have focused our e
 .. not sure what they expect here ..
 
 
-\linenumbers
+%\linenumbers
 
 % Use "Eq" instead of "Equation" for equation citations.
 \section*{Introduction}
@@ -394,6 +395,104 @@ CO\textsubscript{2} Maecenas convallis mauris sit amet sem ultrices gravida. Eti
 
 Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo justo ac dui pretium imperdiet. Sed suscipit iaculis mi at feugiat. Ut neque ipsum, luctus id lacus ut, laoreet scelerisque urna. Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed. Nam condimentum sem eget mollis euismod. Nullam dui urna, gravida venenatis dui et, tincidunt sodales ex. Nunc est dui, sodales sed mauris nec, auctor sagittis leo. Aliquam tincidunt, ex in facilisis elementum, libero lectus luctus est, non vulputate nisl augue at dolor. For more information, see \nameref{S1_Appendix}.
 
+
+
+
+
+% TABLES, todo: move.
+\begin{table}[]
+	\centering
+	\caption{Implementation of the ``10 simple rules for making training materials FAIR'' in the training material\label{tbl:rulesforfair}}
+	\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+		Rules                                                                                            & Implementation in the training material\\\hline
+		Plan to share your training materials online                                                     & Online training material portfolio, managed via a GitHub repository and pull requests to submit tutorials\\
+		Improve findability of your training materials by properly describing them                       & Rich metadata associated with each tutorial that are visible and accessible via schemas on each tutorial webpage\\
+		Give your training materials a unique identity                                                   & URL persistency with redirection in case of renaming of tutorials\\
+		Data used for tutorials stored on Zenodo  and associated with a Digital Object Identifiers (DOI) & Register your training materials online\\
+		Automatically registered on the ELIXIR's Training e-Support System, TeSS                         & If appropriate, define access rules for your training materials\\
+		Online and free to use                                                                           & Use an interoperable format for your training materials\\
+		Content of the tutorials and slides written in Markdown                                          & Metadata associated with tutorials in YAML, Workflows stored in JSON\\
+		Make your training materials (re)usable for trainers                                             & Online. Rich metadata associated with each tutorial: title, contributor details, license, description, learning outcomes, audience, requirements, tags/keywords, duration, date of last revision. Strong technical support for each tutorial: workflow, data on Zenodo and also available as data libraries on usegalaxy.*, tools installable via the Galaxy Tool Shed, list of possible Galaxy instances with the needed tools.\\
+		Make your training materials (re)usable for trainees                                             & Online and easy to follow hands-on tutorials. Rich metadata with ``Specific, Measurable, Attainable, Realistic and Time bound'' (SMART) learning outcomes following the Bloom's taxonomy. Requirements and follow-up tutorials to build learning parth. Provide list of Galaxy instances offering needed tools, data on Zenodo and also available as data libraries on usegalaxy.*\\
+		Make your training materials contribution friendly and citable                                   & Open and collaborative infrastructure with contribution guidelines, a CONTRIBUTION file and a chat. Details to cite tutorials and give credit to contributors available at the end of each tutorial.\\
+		Keep your training materials up-to-date                                                          & Open, collaborative and transparent peer-review and curation process. Short time between updates (Table …)\\
+	\end{tabular}
+\end{table}
+
+\begin{table}[]
+	\centering
+	\caption{Top 10 tutorials in terms of filled embedded feedback form. Table extracted using \href{https://github.com/bebatut/galaxy-training-material-stats/blob/master/src/extract_repo_content_stats.ipynb}{Jupyter Notebook} on 2019-04-12\label{tbl:toptentutorials}}
+	\begin{tabular}{p{0.8\textwidth}p{0.15\textwidth}}
+		Tutorial                                                             & Number of responses \\\hline
+		A short introduction to Galaxy (Introduction)                        & 174 \\
+		Galaxy 101 (Introduction)                                            & 80 \\
+		Quality Control (Sequence analysis)                                  & 73 \\
+		Reference-based RNA-Seq data analysis (Transcriptomics)              & 56 \\
+		From peaks to genes (Introduction)                                   & 44 \\
+		Visualization of RNA-Seq results with Volcano Plot (Transcriptomics) & 20 \\
+		Mapping (Sequence analysis)                                          & 19 \\
+		NGS data logistics (Introduction)                                    & 19 \\
+		16S Microbial Analysis with mothur (extended) (Metagenomics)         & 16 \\
+		RNA-Seq reads to counts (Transcriptomics)                            & 14
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[]
+	\centering
+	\caption{Implementation of the ``Ten simple rules for collaborative lesson development''\cite{Devenyi_2018} in the training material\label{tbl:tensimplerules}}
+	\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+		Rules & Implementation in the training material \\
+		Clarify audience & Tutorial metadata includes level indicators (introductory, intermediate, advanced) and a list of prerequisite tutorials as recommended prior knowledge. This information is rendered at the top of each tutorial. \\
+		Make lessons modular & Learning paths \\
+		Teach best practice lesson development & In order to support the community of training developers, a ``Contributing'' topic was created containing 10 tutorials describing how to create new content. Furthermore, quarterly online collaboration fest(CoFests) are organized, where contributors can get direct support  \\
+		Encourage and empower contributors & Involve them in reviews. Mentor them. Encourage them to become maintainers. Planemo \\
+		Build community around lessons & CoFests and Community calls. Chat \\
+		Publish periodically and recognize contributions & Author list on tutorials. Hall of fame. Citation at the end of the tutorial. Tweet about new or updated tutorials. List of new or updated tutorials in community newsletter. Soon: publication of tutorials via article \\
+		Evaluate lessons at several scales & PR review, Trainee feedback, Instructor feedback, Workflow testing \\
+		Reduce, re-use, recycle & Snippets. Share content between tutorials. Small modular tutorials linked with learning paths \\
+		Link to other resources & Citations. Gallantries? \\
+		You can't please everyone & but we can try (several different Galaxy introduction tutorials). Aim to clearly state what the tutorial does and does not cover, at the start.  \\
+	\end{tabular}
+\end{table}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\textwidth]{images/visits-per-month.png}
+	\caption{Number of visits per month on http://training.galaxyproject.org/ given the Google Analytics stats.\label{fig:visits}}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.45\textwidth]{images/feedback.png}
+	\includegraphics[width=0.45\textwidth]{images/feedback-scores.png}
+	\caption{Number and results of the embedded feedback in the tutorials. 3 questions are asked in the form: ``How much did you like this tutorial?'' (from 1 to z5), ``What did you like?``, ``What could be improved?''.\label{fig:feedback}}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/tiaas-map.png}
+	\caption{This setup has scaled well with administration time and cost, since June 2018 Galaxy Europe has hosted 66 trainings with over 2800 students with minimal overhead.\label{fig:tiaas-map}}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/tiaas.png}
+	\caption{The dashboard provides anonymised observability into class progress, trainers can see at a glance if everyone has completed the quality control steps, or if there are any errors that they should ask the students to raise with the class.\label{fig:tiaas}}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/commits.png}
+	\caption{Graph of contributions to the training materials repository\label{fig:contributions}}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/tool-in-tutorial.png}
+	\caption{Here we show an automatically generated snippet box, all of the relevant parameters have been extracted from the workflow. Where parameters are left to their default values, they are not mentioned. Where they are changed, detained instructions about the precise parameters and their names are documented.\label{fig:planemo}}
+\end{figure}
+
 \section*{Supporting information}
 
 % Include only the SI item label in the paragraph heading. Use the \nameref{label} command to cite SI items in the text.
@@ -419,12 +518,102 @@ Sed non aliquet felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 
 \paragraph*{S1 Table.}
 \label{S1_Table}
-{\bf Lorem ipsum.} Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+\begin{table}[]
+\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+	\centering
+	\caption{Top 10 tutorials in terms of visited pages given the Google Analytics stats. Table extracted using \href{https://github.com/bebatut/galaxy-training-material-stats/blob/master/src/extract_repo_content_stats.ipynb}{Jupyter Notebook} on 2019-04-12.\label{tbl:topViewedTutorials}}
+	\begin{tabular}{ll}
+		Tutorial                                                             & Average number of visits per month \\\hline
+		Reference-based RNA-Seq data analysis (Transcriptomics)              & 1763 \\
+		16S Microbial Analysis with mothur (Metagenomics)                    & 1418 \\
+		Visualization of RNA-Seq results with Volcano Plot (Transcriptomics) & 1299 \\
+		Quality Control (Sequence analysis)                                  & 1170 \\
+		Galaxy 101 (Introduction)                                            & 768 \\
+		Mapping (Sequence analysis)                                          & 701 \\
+		Visualization of RNA-Seq results with Heatmap (Transcriptomics)      & 686 \\
+		Genome annotation                                                    & 585 \\
+		RNA-Seq reads to counts (Transcriptomics)                            & 575 \\
+		General tutorial (Metagenomics)                                      & 500 \\
+	\end{tabular}
+\end{adjustwidth}
+\end{table}
+
+\paragraph*{S2 Table.}
+\label{S2_Table}
+\begin{table}[]
+\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+	\centering
+	\caption{Top 10 tutorials by number of Pull Request on the GitHub repository. Table extracted using \href{https://github.com/bebatut/galaxy-training-material-stats/blob/master/src/extract_repo_content_stats.ipynb}{Jupyter Notebook} on 2019-04-12.\label{tbl:topEditedTutorials}}
+	\begin{tabular}{l|lll}
+		Tutorials                           & Creation   & Number of Pull Requests & Mean duration between PRs\\\hline
+		Reference-based RNA-seq             & 2016-10-05 & 78                      & 16 days\\
+		16S Microbial Analysis with mothur  & 2017-02-12 & 55                      & 18 days\\
+		Mapping                             & 2016-10-04 & 50                      & 22 days\\
+		Quality control                     & 2016-10-04 & 45                      & 27 days\\
+		De novo transcriptomics             & 2017-02-19 & 45                      & 20 days\\
+		From peaks to genes                 & 2017-05-24 & 44                      & 15 days\\
+		DNA Methylation data analysis       & 2016-10-05 & 42                      & 22 days\\
+		De novo RAD seq                     & 2017-02-14 & 42                      & 28 days\\
+		Reference-based RAD-seq             & 2017-02-14 & 40                      & 31 days\\
+		Calling variants in diploid systems & 2016-08-19 & 40                      & 28 days\\
+	\end{tabular}
+\end{adjustwidth}
+\end{table}
+
+
+\paragraph*{S3 Table.}
+\label{S3_Table}
+\begin{table}[]
+\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+	\centering
+	\caption{Statistics about Pull Request on GitHub repository.\label{tbl:pullRequestReviewing}}
+	\begin{tabular}{l|p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}p{0.2\textwidth}}
+									        & Number & Reviews and comments (mean number per PR) & Reviewers (mean number per PR) & Duration (mean per PR) \\\hline
+		Pull Requests to add tutorial(s)    & 135    & 9.3                                       & 2.7                            & 26 days\\
+		Pull Requests to update tutorial(s) & 683    & 3.4                                       & 1.7                            & 11 days\\
+		Other Pull Requests                 & 386    & 2.5                                       & 1.5                            & 5 days\\
+	\end{tabular}
+\end{adjustwidth}
+\end{table}
+
+
+
+\begin{table}[]
+\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+	\centering
+	\caption{Numbers of tutorials, slides, hands-on tutorials and other material per topics. \label{tbl:numberOfMaterials}}
+	\begin{tabular}{p{2in}|p{0.8in}llp{0.8in}lll}
+		Topics                                       & Introduction slide decks & Tutorials & Slide decks & Hands-on tutorials & Workflows & Data on Zenodo & Data on data library\\\hline
+		Introduction to Galaxy Analyses              & 1                        & 8         & 1           & 7                  & 3         & 7              & 3\\
+		Assembly                                     & 0                        & 4         & 3           & 4                  & 4         & 4              & 4\\
+		Computational chemistry                      & 0                        & 4         & 0           & 4                  & 3         & 4              & 0\\
+		Ecology                                      & 0                        & 5         & 0           & 5                  & 4         & 4              & 4\\
+		Epigenetics                                  & 2                        & 5         & 2           & 5                  & 5         & 5              & 4\\
+		Genome Annotation                            & 1                        & 4         & 2           & 4                  & 2         & 4              & 4\\
+		Imaging                                      & 0                        & 2         & 0           & 2                  & 2         & 2              & 2\\
+		Metabolomics                                 & 1                        & 3         & 0           & 3                  & 3         & 3              & 2\\
+		Metagenomics                                 & 1                        & 5         & 0           & 5                  & 5         & 5              & 4\\
+		Proteomics                                   & 0                        & 14        & 0           & 14                 & 13        & 14             & 9\\
+		Sequence analysis                            & 0                        & 2         & 2           & 2                  & 2         & 2              & 2\\
+		Statistics and machine learning              & 0                        & 4         & 0           & 4                  & 4         & 4              & 4\\
+		Transcriptomics                              & 1                        & 19        & 3           & 18                 & 16        & 18             & 13\\
+		Variant Analysis                             & 1                        & 6         & 0           & 6                  & 4         & 6              & 6\\
+		Data Manipulation                            &                          & 7         & 1           & 6                  &           & 6              & \\
+		User Interface and Features                  &                          & 4         & 0           & 4                  & 1         & 4              & 1\\
+		Development in Galaxy                        & 1                        & 13        & 12          & 4                  &           &                & \\
+		Galaxy Server administration                 & 1                        & 31        & 24          & 16                 &           & 6              & \\
+		Contributing to the Galaxy Training Material & 1                        & 10        & 2           & 9                  &           &                & \\
+		Teaching and Hosting Galaxy training         & 0                        & 5         & 1           & 4                  &           &                & \\
+	\end{tabular}
+\end{adjustwidth}
+\end{table}
+
 
 \section*{Acknowledgments}
 Cras egestas velit mauris, eu mollis turpis pellentesque sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam id pretium nisi. Sed ac quam id nisi malesuada congue. Sed interdum aliquet augue, at pellentesque quam rhoncus vitae.
 
-\nolinenumbers
+%\nolinenumbers
+
 
 % Either type in your references using
 % \begin{thebibliography}{}
@@ -439,27 +628,30 @@ Cras egestas velit mauris, eu mollis turpis pellentesque sit amet. Interdum et m
 % here. See http://journals.plos.org/plosone/s/latex for
 % step-by-step instructions.
 %
-\begin{thebibliography}{10}
 
-\bibitem{bib1}
-Conant GC, Wolfe KH.
-\newblock {{T}urning a hobby into a job: how duplicated genes find new
-  functions}.
-\newblock Nat Rev Genet. 2008 Dec;9(12):938--950.
+\bibliography{references}
 
-\bibitem{bib2}
-Ohno S.
-\newblock Evolution by gene duplication.
-\newblock London: George Alien \& Unwin Ltd. Berlin, Heidelberg and New York:
-  Springer-Verlag.; 1970.
+%\begin{thebibliography}{10}
 
-\bibitem{bib3}
-Magwire MM, Bayer F, Webster CL, Cao C, Jiggins FM.
-\newblock {{S}uccessive increases in the resistance of {D}rosophila to viral
-  infection through a transposon insertion followed by a {D}uplication}.
-\newblock PLoS Genet. 2011 Oct;7(10):e1002337.
+%\bibitem{bib1}
+%Conant GC, Wolfe KH.
+%\newblock {{T}urning a hobby into a job: how duplicated genes find new
+  %functions}.
+%\newblock Nat Rev Genet. 2008 Dec;9(12):938--950.
 
-\end{thebibliography}
+%\bibitem{bib2}
+%Ohno S.
+%\newblock Evolution by gene duplication.
+%\newblock London: George Alien \& Unwin Ltd. Berlin, Heidelberg and New York:
+  %Springer-Verlag.; 1970.
+
+%\bibitem{bib3}
+%Magwire MM, Bayer F, Webster CL, Cao C, Jiggins FM.
+%\newblock {{S}uccessive increases in the resistance of {D}rosophila to viral
+  %infection through a transposon insertion followed by a {D}uplication}.
+%\newblock PLoS Genet. 2011 Oct;7(10):e1002337.
+
+%\end{thebibliography}
 
 
 
