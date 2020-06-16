@@ -184,6 +184,8 @@
 \newline
 % Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
 \\
+\textbf{NOTE: please add your name and affiliation below if you want to be on this paper :)}\\
+\ \\
 Saskia Hiltemann\textsuperscript{1,2\Yinyang\textpilcrow},
 Helena Rasche\textsuperscript{2\Yinyang},
 AddYourNameHere!\textsuperscript{3},
@@ -406,8 +408,8 @@ The GTN training materials minimize the amount of time and effort required for i
 
 \verb+..choose tutorials+ \\
 \verb+.. metadata to help determine level, time, etc+ \\
-\verb+.. instructor notes to prepare slide decks+ \i
-\verb.. find supporting public Galaxy servers supporting the tutorial+ \\
+\verb+.. instructor notes to prepare slide decks+ \\
+\verb+.. find supporting public Galaxy servers supporting the tutorial+ \\
 \verb+.. request TIaaS+ \\
 \verb+.. workshop intro slides to use on the day+ \\
 
@@ -501,25 +503,8 @@ Students can then access it through the network and work directly on the server,
 
 \subsection*{A Contributor's View: developing GTN tutorials}
 
-The GTN training materials repository is inherently collaborative and community-driven, and comprises a growing number of contributors with expertise in a wide range of scientific domains.
-The GTN ensures easy contribution and maintenance, with a diverse set of tools and standards.
-The contributors can automatically create the skeleton of a new tutorial, in Markdown, from a Galaxy workflow.
-All development and testing are done using a Planemo instance, and it allows users to run the GTN website locally, to preview changes.
-Given a workflow, planemo produces a markdown document containing the tools and parameters used.
-The contributors then have only to fill the document with scientifique concepts and explanations.
-If the contributor encounters difficulties, they can seek help on the gitter GTN channel, always active due to the community covering many time zones.
-Once the material is complete, planemo is used to verify the syntax of the markdown to ensure the page will not appear broken.
-The developers submit a pull request for review once the tutorial is completed.
-Two or three reviewers are then assigned to the material, and help the author with the last corrections.
+The GTN training materials repository is inherently collaborative and community-driven, and comprises a growing number of contributors with expertise in a wide range of scientific and technical domains. Given this highly collaborative nature of a community with very different skill sets, we continually strive to lower contribution barriers for content creators by providing a framework that is easy to use for training developers regardless of their level of knowledge of the underlying technical framework.
 
-
-The training materials are stored in a GitHub repository (\url{https://github.com/galaxyproject/training-material}).
-To create a new tutorial or update an existing one, an individual or a group of individuals “forks” (duplicated into a user-controlled space) the Github repository, writes and updates the content of the tutorial using Markdown inside a branch.
-Once the changes are ready, a “pull request” is created to submit the changes to the original repository.
-A pull request indicates that a new tutorial or some changes are ready to be reviewed.
-
-\subsubsection*{Contribution Flow}
-Given the highly collaborative nature of the GTN training materials, we continually strive to lower contribution barriers for content creators by providing a framework that is easy to use for training developers regardless of their level of knowledge of the underlying technical framework.
 To this end, we aim to adhere to the best-practice guidelines described in  “Ten simple rules for collaborative lesson development” \cite{TODO}.
 Table~\ref{tbl:tensimplerules} describes these ten recommendations and their implementation within the GTN training material framework.
 
@@ -547,6 +532,37 @@ Galaxy training materials have evolved over the years to facilitate the contribu
 The structure of the tutorials and repository has been made modular with unified syntax and use of snippets enabling easy access for authors to common tips and tricks new users might need to know.
 This system allows for easy updating of all tutorials, if there is a change in tools or interface.
 
+\subsubsection*{Contribution Flow}
+
+The GTN framework ensures easy contribution and maintenance, through a diverse set of tools and standards.
+This section describes the typical process a tutorial contributor will go through to develop a new tutorial.
+
+\subsubsection*{Planemo Training Development Kit}
+Tutorials are written in Markdwon \cite{}, using the jekyll \cite{} framework. To simplify the process, we have created a \emph{Tutorial Development Kit} within the Planemo tool \cite{TODO}, which allows contributors to generate a tutorial skeleton from a Galaxy workflow as a starting point for tutorial creation. This skeleton contains
+
+
+\subsubsection*{Testing}
+
+\subsubsection*{Peer Review}
+
+
+
+
+All development and testing are done using a Planemo instance, and it allows users to run the GTN website locally, to preview changes.
+Given a workflow, planemo produces a markdown document containing the tools and parameters used.
+The contributors then have only to fill the document with scientifique concepts and explanations.
+If the contributor encounters difficulties, they can seek help on the gitter GTN channel, always active due to the community covering many time zones.
+Once the material is complete, planemo is used to verify the syntax of the markdown to ensure the page will not appear broken.
+The developers submit a pull request for review once the tutorial is completed.
+Two or three reviewers are then assigned to the material, and help the author with the last corrections.
+
+
+The training materials are stored in a GitHub repository (\url{https://github.com/galaxyproject/training-material}).
+To create a new tutorial or update an existing one, an individual or a group of individuals “forks” (duplicated into a user-controlled space) the Github repository, writes and updates the content of the tutorial using Markdown inside a branch.
+Once the changes are ready, a “pull request” is created to submit the changes to the original repository.
+A pull request indicates that a new tutorial or some changes are ready to be reviewed.
+
+
 \subsubsection*{Training Development Kit: Planemo}
 The GTN has co-opted the development kit from the Galaxy project and added numerous training-focused additions. Anyone developing tools, can now also easily develop training materials using a familiar tool.
 Our community came to us with a common problem, they had a workflow they were using to analyse their data, and now wanted to turn this into a tutorial to let people know about their exciting developments.
@@ -562,7 +578,7 @@ All of this was previously a manual task that has now been automated:
 	\caption{Here we show an automatically generated snippet box, all of the relevant parameters have been extracted from the workflow. Where parameters are left to their default values, they are not mentioned. Where they are changed, detained instructions about the precise parameters and their names are documented.\label{fig:planemo}}
 \end{figure}
 
-In order to further lower the contribution barrier, this planemo command has been encapsulated into a webservice (https://ptdk.herokuapp.com/) wherein training material authors can point to a public workflow on one of the UseGalaxy.* servers, and generate this workflow skeleton automatically. This can then be downloaded as an archive, and the author can add the files to their fork of the training materials.
+In order to further lower the contribution barrier, this planemo command has been encapsulated into a webservice (\url{https://ptdk.herokuapp.com/}) wherein training material authors can point to a public workflow on one of the UseGalaxy.* servers, and generate this workflow skeleton automatically. This can then be downloaded as an archive, and the author can add the files to their fork of the training materials.
 We have found that this approach saves time for not only the contributors but also the reviewers as the training materials contributed using this method adhere well to the training material’s style guide.
 
 % Zenodo
@@ -575,7 +591,7 @@ Community
 
 The Galaxy Training Network community has grown significantly since its inception. Within two years after the start of the project, we had 77 members who wanted to be recognised as contributors to the training materials.
 In the past two years, we have doubled again to 150 recognised contributors.
-All of these contributors are publicly recognised in our “Hall of Fame” (https://training.galaxyproject.org/training-material/hall-of-fame/).
+All of these contributors are publicly recognised in our “Hall of Fame” (\url{https://training.galaxyproject.org/training-material/hall-of-fame/}).
 Notably, these are the subset of contributors who wanted to be recognised, numerous others have contributed small fixes and one-off corrections where they did not choose to self-identify as one of the contributors.
 
 \subsubsection*{Peer Review}
