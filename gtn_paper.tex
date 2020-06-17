@@ -184,11 +184,12 @@
 \newline
 % Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
 \\
-\textbf{NOTE: please add your name and affiliation below if you want to be on this paper :)}\\
+\color{blue} \textbf{NOTE: please add your name and affiliation below if you want to be on this paper! This project is only possibly because of the amazing community behind it. If you have contributed in any way to this project, you may add yourself as an author. (And contributions come in many forms, GitHub contributions are just one form, and not a requirement). } \\
+\color{black}
 \ \\
 Saskia Hiltemann\textsuperscript{1,2\Yinyang\textpilcrow},
 Helena Rasche\textsuperscript{2\Yinyang},
-AddYourNameHere!\textsuperscript{3},
+\color{blue}AddYourNameHere!\textsuperscript{3}\color{black},
 Björn Grüning \textsuperscript{2\ddag}
 Bérénice Batut\textsuperscript{2\ddag},
 with the GTN community
@@ -196,7 +197,7 @@ with the GTN community
 \bigskip
 \textbf{1} Clinical Bioinformatics Group, Department of Pathology, Erasmus Medical Center, Wytemaweg 80, 3015 CN, Rotterdam, The Netherlands \\
 \textbf{2} Bioinformatics Group, Department of Computer Science, Albert-Ludwigs-University Freiburg, Georges-Köhler-Allee 106, Freiburg 79110, Germany \\
-\textbf{3} Affiliation Dept/Program/Center, Institution Name, City, State, Country \\
+\color{blue}\textbf{3} AddYoursHere! Affiliation Dept/Program/Center, Institution Name, City, State, Country \color{black}\\
 %TODO: add your affiliation here as needed
 \bigskip
 
@@ -230,9 +231,14 @@ with the GTN community
 
 % Please keep the abstract below 300 words
 \section*{Abstract}
-There is an ongoing explosion of scientific datasets being generated, brought on by recent technological advances in the area of genomic sequencing. As a result, the life sciences have become increasingly computational in nature, and bioinformatics has taken on a central role in research studies. However, basic computational skills and data stewardship are rarely taught in life science educational programmes (Attwood et al. 2019), resulting in a skills gap in many of the researchers tasked with analysing these big datasets. In order to address this skills gap and empower researchers to perform their own data analyses, in 2016 the Galaxy Training Network (GTN) developed the Galaxy Training Platform (https://training.galaxyproject.org); an open, community-driven framework for the collection of training materials for life science data analysis, utilizing the web-based user-friendly Galaxy data analysis platform.
+There is an ongoing explosion of scientific datasets being generated, brought on by recent technological advances in the area of genomic sequencing.
+As a result, the life sciences have become increasingly computational in nature, and bioinformatics has taken on a central role in research studies.
+However, basic computational skills and data stewardship are rarely taught in life science educational programmes (Attwood et al. 2019), resulting in a skills gap in many of the researchers tasked with analysing these big datasets.
+In order to address this skills gap and empower researchers to perform their own data analyses, in 2016 the Galaxy Training Network (GTN) developed the Galaxy Training Platform (https://training.galaxyproject.org); an open, community-driven framework for the collection of training materials for life science data analysis, utilizing the web-based user-friendly Galaxy data analysis platform.
 
-Since its inception, this training platform has thrived, with the number of tutorials and contributors expanding rapidly, and the range of topics extending beyong life sciences to include topics such as climatology, cheminformatics and machine learning. While initially aimed at supporting researchers directly, the GTN framework has proven to be an invaluable resource for many instructors as well. In order to support this growing community of instructors, we have focused our efforts in recent years on adding increased support for teachers and trainers, for example by adding features aimed at facilitating the use of the materials in a classroom setting, simplifying the contribution flow for new materials, and adding a set of train-the-trainer materials.
+Since its inception, this training platform has thrived, with the number of tutorials and contributors expanding rapidly, and the range of topics extending beyong life sciences to include topics such as climatology, cheminformatics and machine learning.
+While initially aimed at supporting researchers directly, the GTN framework has proven to be an invaluable resource for many instructors as well. In order to support this growing community of instructors, we have focused our efforts in recent years on adding increased support for teachers and trainers.
+We have added features aimed at facilitating the use of the materials in a classroom setting, simplifying the contribution flow for new materials, and adding a set of train-the-trainer materials.
 
 Here we present the latest developments in the project, aimed at facilitating the use of the Galaxy Training materials by educators.
 
@@ -276,7 +282,7 @@ While there is much work to be done, here we illustrate our ongoing efforts to b
 
 \section*{Results}
 
-\verb+few sentences about our goals and priorities? FAIR, community-driven, open+
+\verb+TODO: short mission statement? few sentences about our goals and priorities? FAIR, community-driven, open+
 
 
 \subsection*{Overview of materials}
@@ -535,13 +541,14 @@ This system allows for easy updating of all tutorials, if there is a change in t
 \subsubsection*{Contribution Flow}
 
 The GTN framework ensures easy contribution and maintenance, through a diverse set of tools and standards.
-This section describes the typical process a tutorial contributor will go through to develop a new tutorial.
+This section describes the typical process a tutorial contributor will go through when developing a new tutorial.
 
-\paragraph*{Planemo Training Development Kit.} Tutorials are written in Markdwon \cite{}, using the jekyll \cite{} framework.
+\paragraph*{Contributing Tutorials.} To get acquainted with the tutorial development methodology, contributors can consult our set of dedicated tutorial in the \emph{contributing} topic. These tutorials provide a step-by-step guide to creating a tutorial in the GTN framework. These tutorials range from technical guides concerning the markdown and jekyll format, to pedagogigal best practices. These tutorial help create a first example tutorial. After completing the tutorial, the instructor can move on to writing their own tutorial.
+
+\paragraph*{Planemo Training Development Kit.} Tutorials are written in Markdown \cite{}, using the jekyll \cite{} framework.
 To simplify the process, we have created a \emph{Tutorial Development Kit} within the Planemo tool \cite{TODO}, which allows contributors to generate a tutorial skeleton from a Galaxy workflow as a starting point for tutorial creation.
 This skeleton contains the metadata secion, auto-generated hands-on boxes for every tool, template question boxes, and instructions for the tutorial creators about how to proceed. From this skeleton, tutorial developers now add fill in the metadata, add the scientific background and story between the hands-on boxes, and add some formative assessment questions and answers.
 This process greatly reduced the development time, and allows tutorial creotors to focus on the scientific content of the tutorial, rather than the technical implementation details of the jekyll framework.
-
 
 In order to further lower the contribution barrier, this planemo command has been encapsulated into a webservice (\url{https://ptdk.herokuapp.com/}) wherein training material authors can point to a public workflow on one of the UseGalaxy.* servers, and generate the tutorial skeleton automatically.
 This removes the need for contributors to install the Planemo tool.
@@ -555,7 +562,10 @@ This removes the need for contributors to install the Planemo tool.
 \end{figure}
 
 
-Furthermore, to avoid duplication of content, we have developed a set of modular tutorial components, called \emph{snippets}, which can easily be re-used across tutorials. For example, common tasks in Galaxy such as starting a workflow or creating a new history, will be steps in the majority of tutorials. In order to avoid duplication, and making it easier to apply updates to these common steps when the Galaxy interface changes, we have modularized these sections, and they can be included at any place in a tutorial with a single import instruction. This again allow tutorial developers focus on the scientific topic at hand, rahter than the Galaxy interface steps.
+Furthermore, to avoid duplication of content, we have developed a set of modular tutorial components, called \emph{snippets}, which can easily be re-used across tutorials.
+For example, common tasks in Galaxy such as starting a workflow or creating a new history, will be steps in the majority of tutorials. In order to avoid duplication, and making it easier to apply updates to these common steps when the Galaxy interface changes, we have modularized these sections.
+These snippets can be included at any place in a tutorial with a single import instruction.
+This again allows tutorial developers focus on the scientific topic at hand, rahter than the Galaxy interface steps.
 
 
 % Zenodo
@@ -612,8 +622,6 @@ As an example, during one workshop a participant complained of the trouble copyi
 This open strategy for content creation and updates is paying off.
 Since the beginning of the project in the middle of 2016, over 1,000 pull requests have been created to add or update tutorials (Table~\ref{tbl:pullRequestReviewing}).
 
-\paragraph*{S3 Table.}
-\label{S3_Table}
 \begin{table}[]
 \begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
 	\centering
@@ -693,12 +701,12 @@ While capacity is available from them, if training needs extend beyond what is p
 \subsubsection*{Training with the Internet}
 Improved internet access also makes the TIaaS offering from Galaxy Europe an increasingly valuable tool for work in LMICs.
 Bandwidth limitations and low reliability means that even if internet access has improved markedly it is often not sufficient for bioinformatics work.
-Using a Galaxy server located in a region with high quality Internet bypasses these issues as demanding uploads and downloads are kept between the Galaxy server and the external data resources while the process is controlled from a remote location with more limited internet (https://galaxyproject.eu/posts/2017/12/10/b3africa/, https://galaxyproject.eu/posts/2019/11/02/tomas-klingstroem-training-update/).
+Using a Galaxy server located in a region with high quality Internet bypasses these issues as demanding uploads and downloads are kept between the Galaxy server and the external data resources while the process is controlled from a remote location with more limited internet (\url{https://galaxyproject.eu/posts/2017/12/10/b3africa/}, \url{https://galaxyproject.eu/posts/2019/11/02/tomas-klingstroem-training-update/}).
 Training researchers to train themselves using the Galaxy Training Network materials thereby means that following a basic training session researchers can continue their training through self-studies and also obtain help not only by their personal contacts but also by the wider Galaxy community.
 When high quality internet access is not available, the GTN has produced Docker images.
 Every topic has its own docker image available on Quay.io, allowing offline training, independent from public galaxy instances. A bare-bones galaxy base image is decorated with the necessary tools, workflows, tours and optional data-libraries to follow the tutorials.
 Tools are installed based on the workflow files in the tutorials, guaranteeing that the galaxy container will contain the correct tools and dependencies.
-The data-libraries can be included in the docker image, or automatically downloaded at the container run, reducing image size.
+The shared data libraries can be included in the docker image, or automatically downloaded at the container run, reducing image size.
 This provides an ideal training environment where internet access is restricted but data is available, including many LMICs.
 
 \subsubsection*{Workflow Testing}
@@ -715,13 +723,9 @@ While the service was initially constructed for the use of the UseGalaxy.* proje
 By having training data pre-loaded, this decreases the required network transfer for a training event, instead of 50 students downloading the same file, loading it into Galaxy 50 times, a single copy exists on that server and can be reused as often as needed without incurring additional storage costs.
 
 
-\section*{Discussion}
-
-
-
-
-
 \section*{Conclusion}
+
+TODO
 
 
 % TABLES, todo: move.
@@ -750,19 +754,6 @@ By having training data pre-loaded, this decreases the required network transfer
 	\centering
 	\includegraphics[width=\textwidth]{images/visits-per-month.png}
 	\caption{Number of visits per month on http://training.galaxyproject.org/ given the Google Analytics stats.\label{fig:visits}}
-\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.45\textwidth]{images/feedback.png}
-	\includegraphics[width=0.45\textwidth]{images/feedback-scores.png}
-	\caption{Number and results of the embedded feedback in the tutorials. 3 questions are asked in the form: ``How much did you like this tutorial?'' (from 1 to z5), ``What did you like?``, ``What could be improved?''.\label{fig:feedback}}
-\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/tiaas-map.png}
-	\caption{This setup has scaled well with administration time and cost, since June 2018 Galaxy Europe has hosted 66 trainings with over 2800 students with minimal overhead.\label{fig:tiaas-map}}
 \end{figure}
 
 \begin{figure}[!ht]
