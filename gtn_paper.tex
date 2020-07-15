@@ -193,7 +193,13 @@ Simon Gladman \textsuperscript{3},
 Hans-Rudolf Hotz \textsuperscript{4},
 Delphine Larivière \textsuperscript{5},
 Daniel Blankenberg \textsuperscript{6},
-\color{blue}AddYourNameHere!\textsuperscript{7}\color{black},
+Pratik Jagtap \textsuperscript{7},
+Thomas Wollmann \textsuperscript{8},
+Lucille Lopez-Delisle \textsuperscript{9},
+Anthony Bretaudeau \textsuperscript{10,11},
+Nadia Goué \textsuperscript{12}
+Timothy J. Grifin \textsuperscript{13}
+\color{blue}AddYourNameHere!\textsuperscript{12}\color{black},
 Björn Grüning \textsuperscript{2\ddag}
 Bérénice Batut\textsuperscript{2\ddag},
 with the GTN community
@@ -205,7 +211,14 @@ with the GTN community
 \textbf{4} Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland and Swiss Institute of Bioinformatics, Basel, Switzerland \\
 \textbf{5} Eberly College of Science, Pennsylvania State University, State College, U.S.A. \\
 \textbf{6} Genomic Medicine Institute, Lerner Research Institute, Cleveland Clinic, Cleveland, OH, USA  \\
-\color{blue}\textbf{7} AddYoursHere! Affiliation Dept/Program/Center, Institution Name, City, State, Country \color{black}\\
+\textbf{7} Department of Biochemistry, Molecular Biology and Biophysics, University of Minnesota, Minneapolis, MN, USA  \\
+\textbf{8} Biomedical Computer Vision Group, BioQuant, IPMB, Heidelberg University\\ Im Neuenheimer Feld 267, Heidelberg, Germany. \\
+\textbf{9} Swiss Cancer Research Institute (ISREC), School of Life Sciences, Ecole Polytechnique Fédérale de Lausanne (EPFL), Lausanne, Switzerland. \\
+\textbf{10} IGEPP, INRAE, Institut Agro, Univ Rennes, 35000, Rennes, France.\\
+\textbf{11} GenOuest Core Facility, Univ Rennes, Inria, CNRS, IRISA, 35000, Rennes, France.\\
+\textbf{12} AuBi, Mesocentre, Clermont Auvergne University, 63178, Aubière, France.\\
+\textbf{13} Department of Biochemistry, Molecular Biology and Biophysics, University of Minnesota, Minneapolis, MN, USA  \\
+\color{blue}\textbf{10} AddYoursHere! Affiliation Dept/Program/Center, Institution Name, City, State, Country \color{black}\\
 %TODO: add your affiliation here as needed
 \bigskip
 
@@ -247,7 +260,7 @@ In order to address this skills gap and empower researchers to perform their own
 Since its inception, this training platform has thrived, with the number of tutorials and contributors expanding rapidly, and the range of topics extending beyond life sciences to include topics such as climatology, cheminformatics and machine learning.
 While initially aimed at supporting researchers directly, the GTN framework has proven to be an invaluable resource for many instructors as well. In order to assist this growing community of instructors, we have focused our efforts in recent years on adding increased support for teachers and trainers.
 We have added features aimed at facilitating the use of the materials in a classroom setting, simplifying the contribution flow for new materials, and adding a set of train-the-trainer notes.
-%% HRH sugestion: #244 replace "In order to support" with "In order to assist", just to reduce the number of 'support' in the text. #245 replace the last "materials" with "notes"
+%% HRH suggestion: #244 replace "In order to support" with "In order to assist", just to reduce the number of 'support' in the text. #245 replace the last "materials" with "notes"
 Here we present the latest developments in the project, aimed at facilitating the use of the Galaxy Training materials by educators.
 
 
@@ -255,7 +268,7 @@ Here we present the latest developments in the project, aimed at facilitating th
 % Use first person. PLOS ONE authors please skip this step.
 % Author Summary not valid for PLOS ONE submissions.
 \section*{Author summary}
-The Galaxy Training Network (GTN) comprises an active community of trainers and a diverse set of training material for the web-based Galaxy data analysis platform. The training material covers a wide range of topics from the natural sciences, and reduces the hurdles to offer the needed training in data analyses on many levels and in different curricula. What once started as a random collection of slide decks used for training, over the years has evolved into a well-structured and harmonized platform offering slides, hands-on, datasets, workflows and even interactive tours over the last four years. 
+The Galaxy Training Network (GTN) comprises an active community of trainers and a diverse set of training materials for the web-based Galaxy data analysis platform. The training material covers a wide range of topics from the natural sciences, and reduces the hurdles to offer the needed training in data analyses on many levels and in different curricula. What once started as a random collection of slide decks used for training, over the years has evolved into a well-structured and harmonized platform offering slides, hands-on, datasets, workflows and even interactive tours over the last four years. 
 In this review, we describe the different components of the GTN, we explain how we manage to keep up with the ever changing training requirements while keeping the quality high, and provide evidence how well the GTN is received, both by trainers and trainees. 
 %% HRH - it's only ~130 words, but it might be used as a start
 \emph{We ask that all authors of research articles include a 150–200 word non-technical summary of the work as part of the manuscript to immediately follow the abstract.
@@ -276,10 +289,10 @@ Indicators of the achievement of education as a right are outlined in the ICESCR
 The 4 As, therefore, provide a concrete set of ideals to strive towards in any global educational endeavor.
 The goals of the Galaxy project are well aligned with the 4 As.
 Galaxy \cite{Afgan2018} is an open source web-based platform for accessible, reproducible, and transparent computational research, driven by an inclusive and diverse worldwide community. %% HRH we should probably cite the 2020NAR paper instead of Afgan2018
-Researchers are able to access a wealth of tools, datasets, and high performance computing resources through a standard web browser, without requiring informatics expertise
+Researchers are able to access a wealth of tools, datasets, and high performance computing resources through a standard web browser, without requiring informatics expertise.
 While Galaxy can be installed locally and in the cloud, there are several public instances that are available, including Galaxy Main (\url{https://usegalaxy.org}), Galaxy Europe (\url{https://usegalaxy.eu}), and Galaxy Australia (\url{https://usegalaxy.org.au}), and many others (\url{https://galaxyproject.org/use/}), that provide free access to analysis pipelines, tools, reference datasets, and compute resources. %% HRH: shall we add the names "Galaxy Main", "Galaxy Europe" and "Galaxy Australia" to the three URLS? because further down in the text (#374), we refer to "Galaxy Europe" and "Galaxy Australia"
 The Galaxy Training Network (GTN; \url{https://training.galaxyproject.org}) provides researchers with online training materials, connects them with local trainers, and helps promote open data analysis practices worldwide. We previously discussed initial support for enabling self-learning using GTN materials \cite{Batut2018}, and now explore recent enhancements and capabilities from the educators’ perspective.
-The training materials are maintained in GitHub (https://github.com/galaxyproject/training-material) via community-reviewed pull requests and cover an increasing spread of topical domains, such as life sciences, computational chemistry, climatology, data visualization, statistics, and machine learning. %% HRH: do we need a reference for GitHub? either https://github.com or https://github.com/galaxyproject/training-material
+The training materials are maintained in GitHub (\url{https://github.com/galaxyproject/training-material}) via community-reviewed pull requests and cover an increasing spread of topical domains, such as life sciences, computational chemistry, climatology, data visualization, statistics, and machine learning. %% HRH: do we need a reference for GitHub? either https://github.com or https://github.com/galaxyproject/training-material
 The resources provided by the GTN have been used to hold more than 100 interactive workshops across the world in 2018-19 alone.%% HRH: instead of "across X continents", "all over the world"
 These resources have also been included as part of formal undergraduate and graduate courses. Great effort has been expended to shift the onus of adhering to the FAIR principles \cite{Wilkinson2016} from individual contributors onto the provided public infrastructure, greatly simplifying the creation of robust training materials.
 Training Infrastructure as a Service (TIaaS; cite) is available to provide free dedicated compute resources for trainers that are hosting public workshops, but do not have resources of their own.
@@ -323,7 +336,7 @@ Following these principles enables trainers and trainees to find, reuse, adapt, 
         If appropriate, define access rules for your training materials               &	Online and free to use \\
         Use an interoperable format for your training materials                       &	Content of the tutorials and slides written in Markdown. Metadata associated with tutorials in YAML, Workflows stored in JSON\\
 		Make your training materials (re)usable for trainers                          & Online. Rich metadata associated with each tutorial: title, contributor details, license, description, learning outcomes, audience, requirements, tags/keywords, duration, date of last revision. Strong technical support for each tutorial: workflow, data on Zenodo and also available as data libraries on usegalaxy.*, tools installable via the Galaxy Tool Shed, list of possible Galaxy instances with the needed tools.\\
-		Make your training materials (re)usable for trainees                          & Online and easy to follow hands-on tutorials. Rich metadata with ``Specific, Measurable, Attainable, Realistic and Time bound'' (SMART) learning outcomes following the Bloom's taxonomy. Requirements and follow-up tutorials to build learning parth. Provide list of Galaxy instances offering needed tools, data on Zenodo and also available as data libraries on usegalaxy.*\\
+		Make your training materials (re)usable for trainees                          & Online and easy to follow hands-on tutorials. Rich metadata with ``Specific, Measurable, Attainable, Realistic and Time bound'' (SMART) learning outcomes following the Bloom's taxonomy. Requirements and follow-up tutorials to build learning path. Provide list of Galaxy instances offering needed tools, data on Zenodo and also available as data libraries on usegalaxy.*\\
 		Make your training materials contribution friendly and citable                & Open and collaborative infrastructure with contribution guidelines, a CONTRIBUTION file and a chat. Details to cite tutorials and give credit to contributors available at the end of each tutorial.\\
 		Keep your training materials up-to-date                                       & Open, collaborative and transparent peer-review and curation process. Short time between updates (Table …)\\
 	\end{tabular}
@@ -331,10 +344,10 @@ Following these principles enables trainers and trainees to find, reuse, adapt, 
 
 
 \subsubsection*{The Galaxy platform to support training}
-Hands-on bioinformatics training necessitates that students run bioinformatics software.
+Classical hands-on bioinformatics training necessitates that students run bioinformatics software.
 This software must run somewhere, either on a cluster, installed to a computer lab, or on the learner's private device.
 By contrast, Galaxy provides access to bioinformatics software requiring only a web browser.
-Galaxy does all the heavy lifting of installing and managing the software, and provides a user-friendly interface to the end-user. This makes Galaxy the ideal platform for teaching. %% HRH: remove "only requiring a web browser to be available" from this sentence, as it occurs in a similar phrase already in the prevous sentence
+Galaxy does all the heavy lifting of installing and managing the software, and provides a user-friendly interface to the end-user. This makes Galaxy the ideal platform for teaching. %% HRH: remove "only requiring a web browser to be available" from this sentence, as it occurs in a similar phrase already in the previous sentence
 Using Galaxy helps eliminate infrastructure hurdles such as owning and configuring a cluster, or deploying software to machines in a computer lab. Using one of the many free, public Galaxy servers removes these complications completely.
 During training events, students access Galaxy through the web interface, and thereby have seamless access to thousands of bioinformatics tools.
 Pre-loaded datasets (aka Galaxy Data Libraries) cut the amount of necessary data transfer.
@@ -348,29 +361,28 @@ Furthermore, existing tutorials are in need of regular maintenance in order to r
 Each new tutorial, or update of an existing tutorial, is submitted to a transparent peer-review and curation process to guarantee high-quality and state-of-the-art content.
 This process relies on editorial teams, i.e.\ community of instructors but also experts in certain topics, and follows the contribution workflow as in open source.
 The editorial team of the topic of the tutorial makes suggestions about the content.
-The suggestions are discussed openly by at least two individuals and the content is edited accordingly.
+The suggestions are discussed openly by at least two individuals and the content is edited accordingly.%% Should it be 'contributors' instead of 'individuals' ?
 Once the editorial team is happy with the content, the pull request is accepted, the new tutorial and any changes are merged in the original repository and become part of the official online training material portfolio.
 Anyone can participate in the editorial team, but the final decision about a pull request is made by a maintainer who can merge the content.
 Each topic (see table of topics) has at least 2 maintainers who are responsible for the topic content and its quality.
 
 \subsubsection*{A Vibrant Community}
 This project is only as strong as the community behind it. In order to foster this community, we TODO
-
-The Galaxy Training Network comes together to collect best practices and training philosophies from our many training events.
+%%In order to strengthen this community, we foster communications and exchanges in various ways.
+The Galaxy Training Network comes together to collect best practices and training philosophies from our many training events.%% and make them easily relevant and accessible on the website.
 The Galaxy community via the Galaxy Training Network supports instructors and workshop organizers with a series of tutorials (\url{https://training.galaxyproject.org/training-material/topics/instructors/}) providing technical and logistic recommendations, collection of different instructor’s experiences (\url{https://training.galaxyproject.org/training-material/topics/instructors/philosophies/}) and regular discussion meetings (online CoFest and community call).
 
 Training participants are encouraged to become active members of the community.
-Filling out the feedback form at the end of each training manual is the first step. Contributions to the training repository (issues and/or pull request) no matter how small they might be in the beginning are welcomed and can gradually lead towards becoming an active member.
+Filling out the feedback form at the end of each training manual is the first step. Contributions to the training repository (issues and/or pull requests) no matter how small they might be in the beginning are welcomed and can gradually lead the contributor towards becoming an active member.
 As a second step toward encouraging contributions, a dedicated Gitter Channel (\url{https://gitter.im/Galaxy-Training-Network/Lobby}) provides a simple and convenient way of staying in contact with the training community.
 For instance, it could be discussions on simple GTN feedback leading to tutorial improvements or tutorials genesis.
 
 \subsection*{Instructor Feedback}
-
 We conducted a survey in January 2020, asking how trainers used the available training material. We received answers from 20 trainers, 89.5\% of which had conducted a training event in the last 3 years.
-This sample consisted of a continuum of trainers, from occasional to seasonned trainers. 17.5\% of trainers gave a training once in the past 3 years, and 35.2\% gave 10 or more training, with 17.5\% more than 25.
+This sample consisted of a continuum of trainers, from occasional to seasonal trainers. 17.5\% of trainers gave a training once in the past 3 years, and 35.2\% gave 10 or more training, with 17.5\% more than 25.
 Concerning the use of training materials, 77\% of them used GTN resources, and some even developed new GTN materials for the occasion. The surveyed trainers all gave training on -omics analyses.
-These trainer profiles could evolve with the introduction of training on diverse fields of expertise. In addition to hands-on and slides material, used by respectively 100\% and 75\% of the surveyed, users used the GTN materials to populate galaxy instances with relevant tools and/or data (25\% and 41.5\% respectively).
-Some trainers also made use of the extra material on teaching and workshop hosting (25\%) or on training philosophies (16.7) to inform and improve their training events.
+These trainer profiles could evolve with the introduction of training on diverse fields of expertise. In addition to hands-on and slides material, used by respectively 100\% and 75\% of the surveyed, users took advantages of the GTN materials to populate galaxy instances with relevant tools and/or data (25\% and 41.5\% respectively).
+Some trainers also made use of the extra material on teaching and workshop hosting (25\%) or on training philosophies (16.7\%) to inform and improve their training events.
 The main galaxy platforms used during these events were Galaxy Europe, Galaxy  Australia, and temporary cloud servers. Trainers also used local galaxy instances (from their country) and  private servers (from their institution).
 About half of them relied on TIaaS (Training Infrastructure as a Service). Its usage was highly recommended.
 The materials are not only used during workshops, given the Google Analytics statistics over the last year.
@@ -390,7 +402,7 @@ For evaluation, a feedback form has been embedded directly at the end of each tu
 	\centering
 	\includegraphics[width=0.45\textwidth]{images/feedback.png}
 	\includegraphics[width=0.45\textwidth]{images/feedback-scores.png}
-	\caption{Number and results of the embedded feedback in the tutorials. 3 questions are asked in the form: ``How much did you like this tutorial?'' (from 1 to z5), ``What did you like?``, ``What could be improved?''.
+	\caption{Number and results of the embedded feedback in the tutorials. 3 questions are asked in the form: ``How much did you like this tutorial?'' (from 1 to 5), ``What did you like?'', ``What could be improved?''.
     \label{fig:feedback}}
 \end{figure}
 
@@ -401,10 +413,10 @@ This time is reduced to a couple of days when the material already exists in the
 They appreciate that the GTN material is “up-to-date”, stable, and that the community provides a wide variety of analysis relevant to current research.
 The trainings are “easy to follow”, have a “great pedagogy” and allow trainees to be “involved in learning”.
 The use of GTN material allows them to have more time to focus on the fundamental principles of  analyses and the specific needs of the trainees.
-The surveyed trainers have been asked about the improvement they wished to see in the GTN ressources.
+The surveyed trainers have been asked about the improvement they wished to see in the GTN resources.
 One of the concerns is computational resources access, such as using public instances, or having backup servers if the server dedicated to the workshop encounters a problem.
 Another important need is the access to GTN material metadata, like:  what new version of training has been published, what new training subject could require contributors.
-Two-thirds of the surveyed trainers are contributors to the training material, and among those who aren’t, 90\% declare planning to become one in the future.
+Two-thirds of the surveyed trainers are contributors to the training material, and among those who are not, 90\% declare planning to become one in the future.
 Users suggest that the pedagogic value of training materials could be improved by directing the users to different training depending on their level of expertise, and to provide more context to the analyses.
 Some trainers would like more interactivity with the tutorials through exercises or through facilitating the parallel between the tutorial and the galaxy instance.
 
@@ -417,8 +429,8 @@ The GTN training materials minimize the amount of time and effort required for i
 \subsubsection*{Preparing a course or workshop}
 
 As an example, we take an instructor who plans to give a workshop on RNA-Seq data analysis to participants who never used Galaxy and never analyzed RNA-Seq data before.
-In the category “Introduction to Galaxy Analyses” on \url{https://training.galaxyproject.org}, they find several HTML-based slides designed as a brief introduction to the Galaxy ecosystem and multiple hands-on tutorials -each with different stories- to introduce the basics of the Galaxy platform are available.
-Each tutorial starts with a list of requirements, the expected level of learners, a rough time estimate, questions addressed by the tutorial, as well learning objectives following the Bloom’s taxonomy \cite{TODO}.
+In the category “Introduction to Galaxy Analyses” on \url{https://training.galaxyproject.org}, they find several HTML-based slides designed as a brief introduction to the Galaxy ecosystem and multiple hands-on tutorials -each with different stories- to introduce the basics of the Galaxy platform.
+Each tutorial starts with a list of requirements, the expected level of learners, a rough time estimate, questions addressed by the tutorial, as well as learning objectives following the Bloom’s taxonomy \cite{TODO}.
 These rich metadata components help the instructors to identify the best tutorial given their goals and audience.
 By their hands-on nature, the tutorials rely on some predefined data and required tools.
 To support instructors in their preparation, a link to the required datasets on an online repository hosted at CERN, Zenodo (\url{https://zenodo.org}), is provided on the top of the tutorial with also a list of Galaxy servers whose have the required tools and a workflow to test the tutorial.
@@ -437,26 +449,25 @@ For example, for RNA-Seq data analysis, the instructor builds a curriculum with 
 
 \subsection*{User Stories}
 
-The GTN materials are actively used by the community, in a wide range of of settings and application domains [TODO: stats].
+The GTN materials are actively used by the community, in a wide range of settings and application domains [TODO: stats].
 Below we describe a number user stories collected from instructors using the GTN tutorials.
 
 \subsubsection*{(Post-)Graduate courses}
 
-Galaxy is being used as an integral part of Bioinformatics programs in undergraduate (Clermont Auvergne University, Texas A\&M University, Avans Hogeschool) and postgraduate (Agrocampus Ouest, Rennes1 University, Brest University, Clermont Auvergne University, Station Biologique de Roscoff, Melbourne University) courses, as well as internal bioinformatics training sessions (Friedrich Miescher Institute, French Bioinformatics Institute, Erasmus MC).
+Galaxy is being used as an integral part of Bioinformatics programs in undergraduate (Clermont Auvergne University, Texas A\&M University, Avans Hogeschool) and postgraduate (Agrocampus Ouest, Rennes University, Brest University, Clermont Auvergne University, Station Biologique de Roscoff, Melbourne University) courses, as well as internal bioinformatics training sessions (Friedrich Miescher Institute, French Bioinformatics Institute, Erasmus MC).
 For undergraduate courses, Galaxy is often used initially to teach the concept of pipelines and workflows.
 Galaxy is convenient to explain data types and metadata, how data is structured, and connected to a tool.
 Students learn the importance of the tool versions, as tools can change subtly and significantly over time, and will impact their analyses. Teachers can likewise showcase the evolution of algorithms over time using different versions of tools (e.g.\ bowtie and bowtie2) to help students understand the advances in the field. Galaxy can be used to show complete analytics workflows.
-Without the need to spend resources on teaching basic unix and command line skills, the time can be fully used to introduce each step (data cleaning, data analysis and visualization) and to go into details of each tool.
-The postgraduate courses as the internal ones are, directed to biologists who are not comfortable working on the command line.
-However, we often notice that beginners in bioinformatics like to initiate themselves with Galaxy as a step towards learning computer languages and working on the command line.
+Without the need to spend resources on teaching basic Unix and command line skills, the time can be fully used to introduce each step (data cleaning, data analysis and visualization) and to go into details of each tool.
+The postgraduate courses as the internal ones are, directed to biologists who are not comfortable working with the command line.
+However, we often notice that beginners in bioinformatics like to initiate themselves with Galaxy as a step towards learning computer languages and working with the command line.
 Here Galaxy can help to introduce the users to classical tools suites and approaches without diving into the command line and scheduling system environment.
 Thus, it easily allows the course organisers to have both life scientists without any coding skills and users with knowledge in the same audience. The focus is on the tools, their parameters and the scientific meaning.
 After getting familiar with each analysis step and understanding the meaning of parameters of each tool, it’s easier to go to command line environments to analyse high throughput data.
 
 
 \subsubsection*{Training biomedical research scientists}
-
-\verb+TODO: Saskia, rapidly evolving field, supplemental training required for later-career scientists, often no computational background+
+Biomedical science is a rapidly evolving field, and heavily reliant on bioinformatics
 
 \subsubsection*{Citizen Science: Ecology}
 
@@ -464,7 +475,7 @@ After getting familiar with each analysis step and understanding the meaning of 
 
 \subsubsection*{Citizen Science: Beer Decoded}
 
-To introduce biology and genomic science to the public and make pupils and citizens aware about DNA, sequencing technologies, bioinformatics, open science and their applications as well as their impact on their daily life, the street science community (\url{https://streetscience.community}) has been initiated.
+To introduce biology and genomic sciences to the public and make pupils and citizens aware about DNA, sequencing technologies, bioinformatics, open science and their applications as well as their impact on their daily life, the street science community (\url{https://streetscience.community}) has been initiated.
 Practical workshops are offered to identify microbes involved in brewing beers by the use of the Oxford Nanopore sequencing device MinION\@.
 The participants learn to perform simple laboratory tasks and gain knowledge about microbes, DNA, sequencing and bioinformatics.
 The European Galaxy server provides its own subdomain for the streetscience project (\url{https://streetscience.usegalaxy.eu}) with dedicated tools.
@@ -520,7 +531,7 @@ Table~\ref{tbl:tensimplerules} describes these ten recommendations and their imp
 		You can't please everyone & but we can try (several different Galaxy introduction tutorials). Aim to clearly state what the tutorial does and does not cover, at the start.  \\
 	\end{tabular}
 \end{table}
-
+%% Maybe more description on what Planemo has to do in the table ?
 
 Galaxy training materials have evolved over the years to facilitate the contribution and maintenance of the tutorials.
 The structure of the tutorials and repository has been made modular with unified syntax and use of snippets enabling easy access for authors to common tips and tricks new users might need to know.
@@ -535,8 +546,8 @@ This section describes the typical process a tutorial contributor will go throug
 
 \paragraph*{Planemo Training Development Kit.} Tutorials are written in Markdown \cite{}, using the jekyll \cite{} framework.
 To simplify the process, we have created a \emph{Tutorial Development Kit} within the Planemo tool \cite{TODO}, which allows contributors to generate a tutorial skeleton from a Galaxy workflow as a starting point for tutorial creation.
-This skeleton contains the metadata secion, auto-generated hands-on boxes for every tool, template question boxes, and instructions for the tutorial creators about how to proceed. From this skeleton, tutorial developers now add fill in the metadata, add the scientific background and story between the hands-on boxes, and add some formative assessment questions and answers.
-This process greatly reduced the development time, and allows tutorial creotors to focus on the scientific content of the tutorial, rather than the technical implementation details of the jekyll framework.
+This skeleton contains the metadata section, auto-generated hands-on boxes for every tool, template question boxes, and instructions for the tutorial creators about how to proceed. From this skeleton, tutorial developers now add fill in the metadata, add the scientific background and story between the hands-on boxes, and add some formative assessment questions and answers.
+This process greatly reduced the development time, and allows tutorial creators to focus on the scientific content of the tutorial, rather than the technical implementation details of the jekyll framework.
 
 In order to further lower the contribution barrier, this planemo command has been encapsulated into a webservice (\url{https://ptdk.herokuapp.com/}) wherein training material authors can point to a public workflow on one of the UseGalaxy.* servers, and generate the tutorial skeleton automatically.
 This removes the need for contributors to install the Planemo tool.
@@ -568,16 +579,16 @@ This files makes it easy to populate a \emph{Shared Data Library} on a Galaxy se
 To this end, we have provided simple functions to generate a local preview of the entire website with a single command. Whenever the tutorial files are updated, the preview will be regenerated as well.
 In addition to visual inspection of the generated web pages, our framework offers a suite of testing tools, allowing contributors to check that their tutorial meets the guidelines.
 These tests include checks of whether all required metadata is present and in the correct format, whether any links within the tutorial are valid, and whether files are correctly formatted.
-This will help contributors and reviewers quickly identify potential problems with a tutorial.
+This will help contributors and reviewers to quickly identify potential problems with a tutorial.
 
 
-\paragraph*{Peer Review.} Once a contributor is happy with their tutorial, they can create a \emph{pull request} (PR) to the GTN GitHub repository where all tutorials are kept.  (\url{https://github.com/galaxyproject/training-material}).
+\paragraph*{Peer Review.} Once a contributor is happy with its tutorial, he/she can create a \emph{pull request} (PR) to the GTN GitHub repository where all tutorials are kept.  (\url{https://github.com/galaxyproject/training-material}).
 The contribution will then undergo a peer-review process.
 This process is open to any volunteers from the community; they will check the tutorial, both in terms of formatting and scientific content.
 These reviewers can make suggestions for updates, and start a discussion with the tutorial contributor(s).
 Typically there will be two or three reviewers for any given pull requests.
-Based on this feedback the contributor will update the tutorial, and this cycle of update and review will continue until both contributor and reviewer are happy with the training materials.
-In order to aid the reviewers, all available tests in our framework are automatically run on incoming pull requests, using the Travis Continuous Integration framework (https://travis-ci.org/). %% HRH: or just add the URL, https://travis-ci.org/
+Based on this feedback the contributor(s) will update the tutorial, and this cycle of update and review will continue until both contributor(s) and reviewers are happy with the training materials.
+In order to aid the reviewers, all available tests in our framework are automatically run on incoming pull requests, using the Travis Continuous Integration framework (\url{https://travis-ci.org/}). %% HRH: or just add the URL, https://travis-ci.org/
 These tests aid in the identification of any errors in the tutorial, and prevent non-compliant tutorials from being merged.
 
 Community is how the GTN survives and thrives: instead of having a central authority for approving new training content or changes, we delegate the reviewing process to topic maintainers.
@@ -593,7 +604,7 @@ Reviews are the cornerstone of this project as shown by our very active reviewer
 As a result, tutorials must undergo regular updates as well to reflect the state-of-the-art in the scientific domain, and correctly reflect the latest available version of the tools and the Galaxy interface.
 
 Instructors preparing for their next workshop often check the tutorials as preparation, and in the process identify the places where the tutorial should be updated.
-If the instructors feel comformatble making these chenges themselves, they can open a pull request proposing the changes.
+If the instructors feel comfortable making these changes themselves, they can open a pull request proposing the changes.
 If not, they can create an \emph{issue} on GitHub to request the changes.
 
 Furthermore, learner feedback is one of the most valuable resources to inform training improvements.
@@ -625,10 +636,10 @@ Since the beginning of the project in the middle of 2016, over 1,000 pull reques
 
 
 Thanks to a fast turnaround (on average, it takes \~20 days between the opening of a pull request and its merge), tutorials are regularly updated and iteratively improved over time, keeping up the standard of high-quality and state of the art.
-Indeed, each tutoial undergoes (on average) a pull request every month to update it. Some highly used tutorials, like the “Reference-based RNA-seq” tutorial, got over 50 pull requests over the last 3 years, on average one every 3 weeks (Table …).
+Indeed, each tutorial undergoes (on average) a pull request every month to update it. Some highly used tutorials, like the “Reference-based RNA-seq” tutorial, got over 50 pull requests over the last 3 years, on average one every 3 weeks (Table …).
 
 
-\paragraph*{Community Support.} If the contributor encounters difficulties in any part of this contribution process, or simple wants to discuss some aspects of their tutorial, they can seek help on the Gitter GTN channel. This channel is always active due to the large community covering many time zones.
+\paragraph*{Community Support.} If contributors encounter difficulties in any part of their contribution process, or simply want to discuss some aspects of their tutorials, they can seek help on the Gitter GTN channel. This channel is always active due to the large community covering many time zones.
 Additionally, they may participate in our quarterly online contribution fests designed to support contributors and collaborate on tutorial updates and additions.
 
 The Galaxy Training Network community has grown significantly since its inception.
@@ -641,7 +652,7 @@ Notably, these are the subset of contributors who wanted to be recognised, numer
 
 \subsection*{Robust Training Infrastructure}
 
-In the workshop setup process identifying cheap, reliable infrastructure is one of the most difficult problems for trainers to solve next to locating or developing training materials.
+In the workshop setup process, identifying affordable and reliable infrastructure is one of the most difficult problems for trainers to solve followed by locating or developing training materials problems.
 The problems share significant commonalities but require very different skills.
 Training materials development requires good writing skills, depth of knowledge about the biological topic, and foresight to plan for student questions or potential errors.
 Training infrastructure development requires good system administration skills, depth of knowledge about the environment (often Linux), and the foresight to plan for required capacity and scaling.
@@ -712,8 +723,10 @@ By having training data pre-loaded, this decreases the required network transfer
 
 
 \section*{Conclusion}
+%% HRH: feel free to correct, improve, enlarge, or rewrite 
+From the start of the Galaxy project, education has been an important part. Offering training as part of conferences or in the form of dedicated workshops has helped to grow and foster the worldwide Galaxy community and has brought (Biological) data analysis to a broad audience. Lot's of training material has been collected and made available on the Galaxy project website. In its original form, the collection lacked a proper structure, and most of those ad-hoc assembled materials became out-of-date soon after publication.
+The Galaxy Training Network has created the Galaxy Training Platform. It is maintained in GitHub and has made it possible to coordinate and structure all those previous efforts in a sustainable way. It makes it easy to manage, adding new tutorials and/or updating existing ones. Thereby, it has become a valuable resource for both the trainee and the trainers.
 
-TODO
 
 
 % TABLES, todo: move.
