@@ -1,0 +1,14 @@
+name: gtn-community-paper-2020
+channels:
+- bioconda
+- conda-forge
+- defaults
+dependencies:
+- jupyter
+- matplotlib
+- pandas
+- pygithub
+- pyyaml
+- requests
+- pillow
+- emoji
