@@ -1,6 +1,5 @@
 name: gtn-community-paper-2020
 channels:
-- bioconda
 - conda-forge
 - defaults
 dependencies:
@@ -13,5 +12,3 @@ dependencies:
 - pillow
 - emoji
 - seaborn
-- oauth2client
-- google-api-python-client

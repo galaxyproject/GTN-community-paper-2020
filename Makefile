@@ -1,5 +1,6 @@
 # Settings
 CONDA_ENV=gtn-community-paper-2020
+SHELL=bash
 
 CONDA=$(shell which conda)
 ifeq ($(CONDA),)
