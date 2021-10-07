@@ -12,3 +12,6 @@ dependencies:
 - pillow
 - emoji
 - seaborn
+- pycountry
+- pip:
+  - pycountry-convert
