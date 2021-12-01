@@ -1,0 +1,17 @@
+name: gtn-community-paper-2020
+channels:
+- conda-forge
+- defaults
+dependencies:
+- jupyter
+- matplotlib
+- pandas
+- pygithub
+- pyyaml
+- requests
+- pillow
+- emoji
+- seaborn
+- pycountry
+- pip:
+  - pycountry-convert
