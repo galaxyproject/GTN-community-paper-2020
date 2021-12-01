@@ -9,6 +9,9 @@ on:
 jobs:
   runner-job:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - uses: actions/checkout@v2
 
@@ -31,6 +34,10 @@ jobs:
           mamba-version: "*"
           auto-activate-base: false
           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
+
+      - run: conda info
+      - run: conda list
+      - run: conda config --show
 
       - name: "Build Graphs"
         run: |
