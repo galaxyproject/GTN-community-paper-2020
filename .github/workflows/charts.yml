@@ -17,6 +17,7 @@ jobs:
           activate-environment: gtn-community-paper-2020
           environment-file: environment.yml
           python-version: 3.8
+          mamba-version: "*"
           auto-activate-base: false
 
       - name: "Build Graphs"
