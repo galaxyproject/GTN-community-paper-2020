@@ -9,12 +9,14 @@ endif
 
 default: help
 
-build-paper: ## build paper
-	latexmk -output-directory=paper -pdf paper/gtn_paper.tex
+build-paper: gtn_paper.pdf ## build paper
 .PHONY: build-paper
 
+gtn_paper.pdf:
+	latexmk -pdf gtn_paper.tex
+
 clean-paper: ## clean paper
-	latexmk -output-directory=paper -c paper/gtn_paper.tex
+	latexmk -C
 .PHONY: clean-paper
 
 install-conda: ## install Miniconda

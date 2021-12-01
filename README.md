@@ -10,7 +10,7 @@ It is available on Overleaf, changes should be made there (for now at least).
 
 ### Usage
 
-- Build the paper locally (sources in `paper` folder):
+- Build the paper locally
 
 ```
 $ make build-paper
@@ -26,11 +26,11 @@ $ make clean-paper
 
 4 Jupyter Notebooks have been used to generate the graphs for the paper:
 
-- [One to extract the details about the current resources in the Galaxy Training Material and some statistics](src/extract_repo_content_stats.ipynb) 
+- [One to extract the details about the current resources in the Galaxy Training Material and some statistics](src/extract_repo_content_stats.ipynb)
 - [One to analyze the results of embeded feedback forms at the end of tutorials](src/analyze_feedback.ipynb)
 - [One to extract and plot the TIaaS stats](src/plot_tiaas_data.ipynb)
 - [One to analyze the Google Analytics stats of Galaxy Training Material website](src/analyze_google_analytics.ipynb)
-    
+
 
 ### Requirements
 
