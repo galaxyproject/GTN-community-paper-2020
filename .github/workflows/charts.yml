@@ -1,0 +1,27 @@
+name: Update Graphics
+
+on:
+  schedule:
+    # We'll run this weekly
+    - cron:  '0 12 * * 1'
+  workflow_dispatch:
+
+jobs:
+  runner-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: gtn-community-paper-2020
+          environment-file: environment.yml
+          python-version: 3.8
+          auto-activate-base: false
+
+      - name: "Build Graphs"
+        run: |
+          for i in {analyze_instructor_survey.ipynb,analyze_hub_training_events.ipynb,analyze_tiaas_data.ipynb}; do
+            jupyter nbconvert "$i" --to python --output "$i.py"
+            python "$i.py"
+          done
