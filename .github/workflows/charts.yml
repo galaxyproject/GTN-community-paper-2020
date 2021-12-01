@@ -23,8 +23,7 @@ jobs:
         with:
           path: ~/conda_pkgs_dir
           key:
-            ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{
-            hashFiles('environment.yml') }}
+            ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
 
       - uses: conda-incubator/setup-miniconda@v2
         with:
@@ -42,7 +41,22 @@ jobs:
       - name: "Build Graphs"
         run: |
           cd src
-          for i in {analyze_instructor_survey.ipynb,analyze_hub_training_events.ipynb,analyze_tiaas_data.ipynb}; do
+          for i in *; do
             jupyter nbconvert "$i" --to python --output "$i.py"
             python "$i.py"
           done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit files
+        run: |
+          git config --local user.email "bot@github.com"
+          git config --local user.name "github-actions[bot]"
+          git add *.lock
+          git commit -m "Updated graphs ($(date -I))" || true
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
