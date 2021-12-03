@@ -41,7 +41,7 @@ jobs:
       - name: "Build Graphs"
         run: |
           cd src
-          for i in *; do
+          for i in {analyze_instructor_survey.ipynb,analyze_hub_training_events.ipynb,analyze_tiaas_data.ipynb}; do
             jupyter nbconvert "$i" --to python --output "$i.py"
             python "$i.py"
           done
