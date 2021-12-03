@@ -280,20 +280,6 @@ Based on these needs, the eBioKit \cite{Hernandez2017} was developed: it is an a
 Various versions of the eBioKit has been used for over a decade by organisations such as EMBnet, H3Abionet, SANBio, and BECA/ILRI to train hundreds of researchers and bioinformatics trainers in LMICs.
 
 
-
-\paragraph*{Training with limited Internet access}
-Improved internet access also makes the TIaaS offering from Galaxy Europe an increasingly valuable tool for work in LMICs.
-Bandwidth limitations and low reliability means that even if internet access has improved markedly it is often not sufficient for bioinformatics work.
-Using a Galaxy server located in a region with high quality Internet bypasses these issues as demanding uploads and downloads are kept between the Galaxy server and the external data resources while the process is controlled from a remote location with more limited internet. %(\url{https://galaxyproject.eu/posts/2017/12/10/b3africa/}, \url{https://galaxyproject.eu/posts/2019/11/02/tomas-klingstroem-training-update/}).
-Training researchers to train themselves using the Galaxy Training Network materials thereby means that following a basic training session researchers can continue their training through self-studies and also obtain help not only by their personal contacts but also by the wider Galaxy community.
-
-When high quality internet access is not available, the GTN has produced Docker images, allowing offline training, independent from public Galaxy instances.
-Every topic has its own Docker image available on Quay.io:  bare-bones Galaxy base image decorated with the necessary tools, workflows, tours and optional data-libraries to follow the tutorials.
-Tools are installed based on the workflow files in the tutorials, guaranteeing that the Galaxy container will contain the correct tools and dependencies.
-The shared data libraries can be included in the Docker image, or automatically downloaded at the container run, reducing image size.
-This provides an ideal training environment where internet access is restricted but data is available, including many LMICs.
-
-
 \subsubsection*{Remote and hybrid teaching}
 
 Globally, there is a significant shortage of instructors able to deliver the bioinformatics training that the scientific and research community needs. To meet the demands, training needs to scale up. Broadcast training is the most effective way to address this need, specially with the availability of broadcast software capable of supporting large numbers of participants and increasing accessibility of high-speed internet connections. By broadcasting training sessions, economic barriers to participation are significantly reduced. The requirement of physical co-location of instructors and students is removed, and costs for travel and accommodation to a workshop are removed. Subsequently, this means there are also no transport or additional CO$_2$ costs incurred (beyond normal travel from home to work/school). Likewise, any geographic barriers that students or instructors might face to reach the training locations are removed. Similarly, instructors or participants with health issues or disabilities that limit their mobility can still participate in these events. This has become acutely relevant for able-bodied participants in recent months due to the spread of COVID-19, where many countries are facing restrictions on travel and gatherings of large groups of people. With these economic, geographic, and health barriers eliminated, training becomes more accessible, but more complex. If instructors are no longer physically present in the classroom, then changes in methodology and didactic practices are required in order to adapt.
@@ -335,8 +321,95 @@ To support Galaxy as a training platform, the Galaxy Training Network (GTN) deve
 	\label{fig:material}
 \end{figure}
 
+\subsubsection*{Tutorial philosophy}
+
+Tutorials are typically constructed around a real-world \emph{research story}, e.g.\ a published journal article describing an analysis workflow or dataset. 
+The tutorial starts by introducing the relevant scientific background, and then proceeds to recreate the analysis, providing details on the relevant scientific and computational concepts involved at each step. The tutorials are composed of alternating theory and hands-on sections, interspersed with formative assessment questions and exercises, and may be supported by a set of introductory slides (Figure \ref{fig:tutorial-skeleton}). Our tutorials are self-contained, i.e. everything needed to complete the tutorials is available from the tutorial page; this includes all the datasets, the workflows, and the list of public Galaxy servers supporting the tutorial. No software installation is needed, and the only technical requirement on the learner is a web browser.
+
+
+This infrastructure has been developed in accordance with the FAIR (Findable, Accessible, Interoperable, Reusable) principles for training materials \cite{Garcia2020} (Table~\ref{tbl:rulesforfair}). Following these principles enables trainers and trainees to find, reuse, adapt, and improve the available tutorials. 
+
+
+\subsubsection*{Open, Collaborative, Peer-reviewed tutorials}
+To ensure the quality of the tutorials, an open, collaborative, community-driven approach is used as in open-source software. All tutorials are stored in the GitHub repository (\url{https://github.com/galaxyproject/training-material}). Each new tutorial, or update of an existing tutorial, is submitted through a transparent peer-review and curation process. This process relies on editorial teams, i.e. a community of both instructors and/or experts in certain topics, and follows the a similar contribution workflow as other open source projects. Anyone can participate in the review process, but the final decision to approve is made by a maintainer who can accept the content.
+
+\subsubsection*{Community appreciated materials} The materials are not only used during workshops but also by individual learners, as shown by the analytics over the last year. On average, the website is visited 17,000+ times per month (Figure~\ref{fig:analytics-all-users}) with 20\% of returning users, mostly from United States (28.99\% of the visits), India (8.01\%), United Kingdom (6.40\%), Germany (6.20\%) and France (3.90\%).  Since September 2018, over 1,500 individual tutorial feedback forms have been submitted with a high satisfaction rate (more than 85\% had a satisfaction rate of 4 or 5, per Figure~\ref{fig:feedback}).
+
+\subsubsection*{A Vibrant Community}
+This project is only as strong as the community behind it and as such we have sought to make it easy to become part of our training community. We provide several avenues for feedback; from the end-of-tutorial feedback form, to a dedicated chat channel on the matrix network (\url{training.galaxyproject.org/chat}) which provides an easy entry point, to callouts on every tutorial welcoming new contributions and guiding would-be contributors through the process, all with the aim to help these new contributors become active members. Every 3 months, community days are organised with community calls, in which we talk together and share news about Galaxy and Training, and a collaboration fest (CoFest), where anyone who would like to contribute, learn how to contribute to the Galaxy Training Material or just catch up with the community is very welcome to join. As a result of this effort, the number of contributors is ever increasing (Figure \ref{fig:material-evolution}) since the beginning of this project.
 
 \subsection*{An Instructor's View: Teaching with Galaxy and its material}
+
+The GTN training materials minimize the amount of time and effort required for instructors to prepare for and run their course or workshop. As an example, we now describe the process used by an instructor who plans to give a workshop on RNA-Seq data analysis to participants who have never used Galaxy or analyzed RNA-Seq data before.
+
+\subsubsection*{Preparing a course or workshop}
+During preparation of a workshop, organisers and instructors work together to identify relevant training materials for their event. Our training material is roughly divided into topics such as \emph{Transcriptomics} or \emph{Climate Science} on \url{https://training.galaxyproject.org}. There instructors can find multiple hands-on tutorials - each with different stories - to explain different types of RNA-Seq data analysis. Each tutorial starts with a list of requirements, the expected level of learners, a rough time estimate, questions addressed by the tutorial, as well as learning objectives following Bloom’s taxonomy \cite{Bloom1956} (Figure \ref{fig:tutorial-skeleton}). Each tutorial includes the pre-requisite tutorials and slide decks which are needed to introduce the topic or tutorial, which the instructor can include in their event schedule. By their hands-on nature (Figure \ref{fig:tutorial-skeleton}), the tutorials rely on some predefined data (included in the tutorial metadata), and tools which we analyse in order to list compatible public Galaxy servers.
+
+\subsubsection*{Teaching the workshop}
+During the workshop, instructors can introduce the topic using the available slide decks, supported by strong speaker notes. After that introduction, following the tutorial script, the instructor can show in a step-by-step fashion with explanations (boxes) how to interact with Galaxy, upload data, run tools for the analyses, extract workflows, and so on. The tutorial is a fully self-contained teaching resource as described in Figure \ref{fig:tutorial-skeleton}. For first time instructors, The Galaxy Training Network has come together to collect different instructor’s experiences (``Training Philosophies'', \url{https://training.galaxyproject.org/topics/instructors/philosophies/}) and also best practices, providing technical and logistic recommendations, accessible on the website with a series of tutorials (available in ``Teaching and Hosting Galaxy training'' category).
+
+\subsubsection*{Relying on a robust Training Infrastructure}
+As \emph{doing} is one of the most efficient ways of learning [\textbf{TODO, CITATION NEEDED}], the instructor encourages participants to do the same as them, either in the same time or later, by providing them access to a Galaxy server and data. There are two main problems in workshop organising: identifying affordable and reliable infrastructure, and locating or developing training materials. The problems share significant commonalities but require very orthogonal skills.
+Training materials development requires good pedagogical and writing skills, depth of knowledge about the biological topic, and foresight to plan for student questions or potential errors. Training infrastructure development requires good system administration skills, depth of knowledge about the environment (often Linux), and the foresight to plan for required capacity and scaling.
+
+The needs of training infrastructure are significantly different from normal Galaxy usage. In normal usage, users run workflows or ad hoc analyses, but can accept 30 minute delays in their jobs being processed. A server used in training must process within 5-15 minutes or the course will be impractical to run. 
+The provided, small (sub-sampled) training datasets help to achieve this goal, but alone are not enough. The GTN has developed several different approaches which all work in concert to provide re-usable solutions to these problems for the instructor, removing the need for them to either manage the system themselves, or convince their local sysadmin to quickly develop the necessary Galaxy knowledge.
+
+\paragraph*{Training Infrastructure as a Service (TIaaS)}
+Many trainers privately raised the issue of the difficulty of locating training infrastructure and Galaxy Europe developed Training Infrastructure as a Service (TIaaS) \cite{Rasche2020} as a response. There they offer ``Galaxy as a service'', sending training jobs to a special queue to run faster ensuring courses run smoothly and efficiently. Following an instructor request for infrastructure, when the workshop begins participants self-register in the course using a keyword provided to them by the instructor. The instructor can then monitor the completion progress of participants without moving around the classroom, and move forward with training more efficiently. TIaaS has proven to be an excellent solution to the training infrastructure problem (Figure~\ref{fig:tiaas}) as trainers can obtain all of the benefits of a large, managed service such as scalability and on-call support. The centralisation of administration means less duplication and waste, and it has been shown to scale well whilst not exerting undue pressure on administrators of existing Galaxy servers. To date TIaaS has been widely used: $>8000$ students taught over 229 events between 2018-06-20 and 2021-11-29, with 64\% using the GTN materials. \textbf{TODO: Update numbers + Include AU, there's another TWO THOUSAND students there.}
+
+
+\paragraph*{Workflow Testing}
+Automated workflow testing provides reassurances to instructors, letting them know that a given tutorial will certainly work on their selected server.
+In the GTN framework, Galaxy workflows are developed in parallel with tutorials. The European Galaxy Team created a automated workflow testing project (\url{https://github.com/usegalaxy-eu/workflow-testing/}) to take these workflows, write test cases for them, and then run them every month against a few servers before recording the results. Automated workflow testing provides reassurances that everything is functional in advance of a big workshop. It helps the community of instructors, contributors, and tool users to work in concert to ensure training materials are known to be working.
+
+\paragraph*{Training Data Libraries}
+
+To run the tutorial, the instructor starts by uploading some datasets, stored on Zenodo, into Galaxy. It requires quite some network transfer if 50 students download the same file and load it into Galaxy 50 times in the same time. To limit that, training data can be pre-loaded into a data library and stored as a single copy exists on that server that can be reused as often as needed without incurring additional storage costs.
+
+To make all of the datasets referenced in the GTN framework available in data libraries, the UseGalaxy.* initiative built a service (\url{https://github.com/usegalaxy-eu/shared-data}) which shares these datasets across data libraries of an array of Galaxy servers. While the service was initially constructed for the use of the UseGalaxy.* project, it is open for anyone to join, allowing their administrators to have all of the necessary datasets for training pre-loaded into their servers, without any administration overhead.
+
+\paragraph*{Scaling Training}
+Touched upon in the discussion of TIaaS is the problem of scaling, but this problem occurs in two directions: how to scale the students, and how to scale the infrastructure.
+Classroom sizes are usually limited by the number of interested participants in the locale, as well as by the availability of suitable venues.
+Infrastructure is similarly limited, but with hidden requirements. Running through a tutorial by yourself may execute quickly and look like everything will run smoothly, but some tools have non-obvious memory or CPU requirements that may balloon when giving training for 30 or 100 students.
+Both of these issues require planning and some creativity to solve.
+TIaaS works to provide scalable infrastructure, the setup underlying the UseGalaxy.eu service allows for the addition of compute resources as needed.
+While capacity is available from them, if training needs extend beyond what is possible on their infrastructure, there is the chance to build a cluster on compute resources that a trainer has available (e.g.\ in AWS) and attach these to the UseGalaxy.eu server, providing for essentially infinite scalability of training infrastructure, limited only by the training budget.
+
+\paragraph*{Training with limited Internet access}
+Improved internet access also makes the TIaaS offering from Galaxy Europe an increasingly valuable tool for work in LMICs.
+Bandwidth limitations and low reliability means that even if internet access has improved markedly it is often not sufficient for bioinformatics work.
+Using a Galaxy server located in a region with high quality Internet bypasses these issues as demanding uploads and downloads are kept between the Galaxy server and the external data resources while the process is controlled from a remote location with more limited internet. %(\url{https://galaxyproject.eu/posts/2017/12/10/b3africa/}, \url{https://galaxyproject.eu/posts/2019/11/02/tomas-klingstroem-training-update/}).
+Training researchers to train themselves using the Galaxy Training Network materials thereby means that following a basic training session researchers can continue their training through self-studies and also obtain help not only by their personal contacts but also by the wider Galaxy community.
+
+When high quality internet access is not available, the GTN has produced Docker images, allowing offline training, independent from public Galaxy instances.
+Every topic has its own Docker image available on Quay.io:  bare-bones Galaxy base image decorated with the necessary tools, workflows, tours and optional data-libraries to follow the tutorials.
+Tools are installed based on the workflow files in the tutorials, guaranteeing that the Galaxy container will contain the correct tools and dependencies.
+The shared data libraries can be included in the Docker image, or automatically downloaded at the container run, reducing image size.
+This provides an ideal training environment where internet access is restricted but data is available, including many LMICs.
+
+\subsubsection*{Instructor Feedback}
+
+In January 2020, we conducted a survey asking how trainers used the available training material. We received answers from 33 trainers, 88\% of which had conducted a training event in the last 3 years.
+This sample consisted of a continuum of trainers, from occasional to seasoned trainers. 24\% of trainers gave a training session once in the past 3 years, and 34\% gave 10 or more training sessions, with 10\% more than 25.
+Concerning the use of training materials, 79\% of them used GTN resources, and some even developed new GTN materials for the occasion. 
+The participating instructors gave 4 or 5 star ratings (within a 1 to 5 scale) to the GTN tutorials, with 91\% of respondents indicating they would absolutely recommend them, confirming the satisfaction scores in the embedded feedback form (Figure~\ref{fig:feedback}).
+
+In addition to the training material, trainers sometimes use resources for enrollment forms and certifications, or add exercises.
+Trainers report the need of a few weeks to prepare new material.
+This time is reduced to a couple of days when the material already exists in the GTN.
+They appreciate that the GTN material is “up-to-date”, stable, and that the community provides a wide variety of analysis relevant to current research.
+The trainings are “easy to follow”, have a “great pedagogy” and allow trainees to be “involved in learning”.
+The use of GTN material allows them to have more time to focus on the fundamental principles of  analyses and the specific needs of the trainees.
+
+The surveyed trainers all gave training on -omics analyses.
+These trainer profiles could evolve with the introduction of training on diverse fields of expertise. In addition to hands-on and slides material, used by respectively 100\% and 72\% of the surveyed, users took advantages of the GTN materials to populate Galaxy instances with relevant tools and/or data (29\% and 38\% respectively).
+Some trainers also made use of the extra material on teaching and workshop hosting (24\%) or on training philosophies (10\%) to inform and improve their training events.
+The main Galaxy platforms used during these events were Galaxy Europe, Galaxy  Australia, and temporary cloud servers. Trainers also used local Galaxy instances (from their country) and  private servers (from their institution).
+59\% of them relied on TIaaS (Training Infrastructure as a Service). Its usage was highly rated (100\% 5 stars) and highly recommended (94\% 5 stars).
+
+69\% of the surveyed trainers are contributors to the training material, and among those who are not, 55\% declare planning to become one in the future.
 
 \subsection*{A Contributor's View: developing GTN tutorials}
 
