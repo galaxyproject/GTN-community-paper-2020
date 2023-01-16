@@ -1,5 +1,7 @@
 # GTN community paper 2020
 
+Now published! https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010752
+
 ## Paper itself
 
 It is available on Overleaf, changes should be made there (for now at least).
